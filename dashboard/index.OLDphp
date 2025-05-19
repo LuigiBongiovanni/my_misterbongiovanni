@@ -1,0 +1,87 @@
+<?php
+session_start();
+if (!isset($_SESSION['user'])) {
+    header("Location: auth/login.php");
+    exit;
+}
+include('config/db.php');
+include('includes/header.php');
+include('includes/navbar.php');
+?>
+<?php require_once('../includes/navbar.php'); ?>
+<div class="container py-4">
+  <h2 class="mb-4">Dashboard</h2>
+  <div class="row g-4">
+
+    <!-- Card Allenamenti -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card text-white bg-success h-100">
+        <div class="card-body">
+          <h5 class="card-title">
+            <i class="bi bi-calendar-check-fill me-2"></i>
+            Prossimo Allenamento
+          </h5>
+          <p class="card-text">15 Maggio - 17:30</p>
+          <a href="/allenamenti/index.php" class="btn btn-light">Vai alla sezione</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card Partite -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card text-white bg-danger h-100">
+        <div class="card-body">
+          <h5 class="card-title">
+            <i class="bi bi-trophy-fill me-2"></i>
+            Prossima Partita
+          </h5>
+          <p class="card-text">19 Maggio - vs Team XYZ</p>
+          <a href="/partite/index.php" class="btn btn-light">Vai alla sezione</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card Squadre -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card text-white bg-primary h-100">
+        <div class="card-body">
+          <h5 class="card-title">
+            <i class="bi bi-people-fill me-2"></i>
+            Squadre Gestite
+          </h5>
+          <p class="card-text">3 squadre registrate</p>
+          <a href="/squadre/index.php" class="btn btn-light">Visualizza squadre</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card Materiale -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card text-white bg-warning h-100">
+        <div class="card-body">
+          <h5 class="card-title">
+            <i class="bi bi-folder-fill me-2"></i>
+            Materiale Didattico
+          </h5>
+          <p class="card-text">10 file caricati</p>
+          <a href="/materiale/index.php" class="btn btn-dark">Apri archivio</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card Presenze -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card text-white bg-info h-100">
+        <div class="card-body">
+          <h5 class="card-title">
+            <i class="bi bi-person-check-fill me-2"></i>
+            Presenze Allenamenti
+          </h5>
+          <p class="card-text">Controlla chi partecipa</p>
+          <a href="/presenze/index.php" class="btn btn-light">Gestisci presenze</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
